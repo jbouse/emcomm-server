@@ -1,0 +1,12 @@
+Mid: {{ message_id }}
+Body: {{ block('body') | length }}
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=ISO-8859-1
+Date: {{ date }}
+From: {{ replies ? mycall : 'NOREPLY' }}
+Mbo: {{ mycall }}
+Subject: {% block subject %}{% endblock %}
+To: SMTP:{% block recipient %}{% endblock %}
+Type: Private
+
+{% block body %}{% endblock %}

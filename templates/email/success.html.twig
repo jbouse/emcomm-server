@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message Queued{% endblock %}
+
+{% block body %}
+<div class="alert alert-success" role="alert">
+    Message Queued
+</div>
+
+<div class="card">
+    <div class="card-header h5">
+        Current Time: {{ time }}
+    </div>
+    <div class="card-body">
+        <p>Thank you {{ email.sender }}</p>
+        <p>Your message to {{ email.recipient }} has been queued for sending.</p>
+        <div class="text-success"><p>{{ visit_message }}</p></div>
+    </div>
+    <div class="card-footer">
+        <a href="{{ path('email_new') }}" class="btn btn-primary">Send Another</a>
+    </div>
+</div>
+{% if app.debug %}
+<br/>
+<div class="card">
+    <div class="card-header h5">
+        Message Debug
+    </div>
+    <div class="card-body">
+        <pre class="pre-scrollable">{{ b2f }}</pre>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

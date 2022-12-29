@@ -1,0 +1,6 @@
+// customize some Bootstrap variables
+// $primary: lighten(#428bca, 20%);
+$enable-shadows: true;
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compose Text{% endblock %}
+
+{% block body %}
+<div class="alert alert-warning" role="alert">
+    You <u>MUST</u> know the mobile service provider for the person you are trying to text for your message to be delivered.
+    If you are not CERTAIN of the mobile service provider, it is recommended that you <a href="{{ path('email_new') }}" class="alert-link">send an email</a> instead.
+</div>
+
+<div class="card">
+    <div class="card-header h5">
+        Compose Text Message
+    </div>
+    <div class="card-body">
+        {{ form(form) }}
+    </div>
+</div>
+{% endblock %}

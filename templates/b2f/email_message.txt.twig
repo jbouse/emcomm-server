@@ -1,0 +1,21 @@
+{% extends 'b2f/base.txt.twig' %}
+
+{% block subject %}
+MSG from {{ message.sender }} - {{ message.subject }}
+{% endblock %}
+
+{% block recipient %}
+{{ message.recipient }}
+{% endblock %}
+
+{% block body %}
+This message is from {{ message.sender }}
+
+Begin Message
+=================================
+{{ message.body }}
+=================================
+End Message
+
+{{ replies ? footer_replies : footer_noreplies }}
+{% endblock %}

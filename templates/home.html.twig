@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="content">
+<p class="lead">
+Welcome to the Emergency Communications Server.
+</p>
+{% if not(replies) %}
+<p>
+You may send an email or text using the buttons below
+but the system is not configured to accept replies.
+Only outgoing messages will be delivered.
+Thank you for your understanding with this limitation.
+</p>
+{% endif %}
+
+{% if replies %}
+<a href="{{ path('about') }}" class="btn btn-primary">Search for Replies</a>
+{% endif %}
+</div>
+{% endblock %}

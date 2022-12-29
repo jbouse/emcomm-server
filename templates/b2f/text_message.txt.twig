@@ -1,0 +1,15 @@
+{% extends 'b2f/base.txt.twig' %}
+
+{% block subject %}
+{{ text_subject }}
+{% endblock %}
+
+{% block recipient %}
+{{ message.recipient }}{{ message.provider.emailSuffix }}
+{% endblock %}
+
+{% block body %}
+From {{ message.sender }}
+
+{{ message.body }}
+{% endblock %}

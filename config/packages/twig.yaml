@@ -1,0 +1,15 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_themes: ['bootstrap_5_layout.html.twig']
+    globals:
+        app_title: 'Emergency Communications Server'
+        mycall: '%env(MYCALL)%'
+        replies: '%env(bool:ALLOW_REPLIES)%'
+        visit_message: '%env(resolve:VISIT_MESSAGE)%'
+        text_subject: '%env(resolve:TEXT_SUBJECT)%'
+        footer_replies: '%env(resolve:REPLY_FOOTER)%'
+        footer_noreplies: '%env(resolve:NOREPLY_FOOTER)%'
+
+when@test:
+    twig:
+        strict_variables: true
