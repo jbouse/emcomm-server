@@ -35,11 +35,11 @@ class B2fMessageController extends AbstractController
         ]);
     }
 
-    #[Route('/email-queued', name: 'email_success')]
-    public function success(B2fMessage $email): Response
-    {
-        return $this->render('email/success.html.twig', [
-            'email' => $email,
-        ]);
-    }
+    // #[Route('/email-queued', name: 'email_success')]
+    // public function success(B2fMessage $email): Response
+    // {
+    //     return $this->render('email/success.html.twig', [
+    //         'email' => $email,
+    //     ]);
+    // }
 }

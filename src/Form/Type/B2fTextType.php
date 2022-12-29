@@ -22,11 +22,17 @@ class B2fTextType extends AbstractType
                 'attr'  => [
                     'placeholder' => 'Sender first and last name',
                 ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
+                ],
             ])
             ->add('recipient', NumberType::class, [
                 'label' => false,
                 'attr'  => [
                     'placeholder' => 'Recipient phone number',
+                ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
                 ],
             ])
             ->add('provider', EntityType::class, [
@@ -34,6 +40,9 @@ class B2fTextType extends AbstractType
                 'class'        => MobileProvider::class,
                 'choice_label' => 'name',
                 'placeholder'  => 'Recipient mobile service provider',
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
+                ],
             ])
             ->add('body', TextareaType::class, [
                 'label' => false,
@@ -41,6 +50,9 @@ class B2fTextType extends AbstractType
                     'rows' => 3,
                     'maxlength' => 90,
                     'placeholder'  => 'Message (limit 90 characters)',
+                ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
                 ],
             ])
             ->add('send', SubmitType::class, ['label' => 'Send Text'])

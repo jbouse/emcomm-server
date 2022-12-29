@@ -20,11 +20,17 @@ class B2fMessageType extends AbstractType
                 'attr'  => [
                     'placeholder' => 'Sender first and last name',
                 ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
+                ],
             ])
             ->add('recipient', EmailType::class, [
                 'label' => false,
                 'attr'  => [
                     'placeholder' => 'Recipient email address',
+                ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
                 ],
             ])
             ->add('subject', TextType::class, [
@@ -32,12 +38,18 @@ class B2fMessageType extends AbstractType
                 'attr'  => [
                     'placeholder' => 'Subject for the message',
                 ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
+                ],
             ])
             ->add('body', TextareaType::class, [
                 'label' => false,
                 'attr'  => [
                     'rows' => 6, 
                     'placeholder'  => 'Message',
+                ],
+                'row_attr' => [
+                    'class' => 'shadow mb-3 rounded',
                 ],
             ])
             ->add('send', SubmitType::class, ['label' => 'Send Email'])
