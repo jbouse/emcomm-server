@@ -27,7 +27,7 @@ class B2fMessageService
     {
         $message = $this->twig->render('b2f/text_message.txt.twig', [
             'message'       => $text,
-            'date'       => gmdate('Y/m/d h:i'),
+            'date'       => gmdate('Y/m/d H:i'),
             'message_id' => $this->generateId(),
         ]); 
 

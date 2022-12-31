@@ -27,7 +27,7 @@ class B2fTextController extends AbstractController
 
             return $this->render('text/success.html.twig', [
                     'text' => $text,
-                    'time' => date('Y/m/d h:i'),
+                    'time' => date('Y/m/d H:i'),
                     'b2f'  => $message,
             ]);
         }
