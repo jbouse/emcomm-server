@@ -25,7 +25,7 @@ class B2fMessageController extends AbstractController
 
             return $this->render('email/success.html.twig', [
                     'email' => $email,
-                    'time' => date('Y/m/d h:i T'),
+                    'time' => date('Y/m/d h:i'),
                     'b2f' => $message,
             ]);
         }

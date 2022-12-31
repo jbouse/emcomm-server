@@ -25,12 +25,12 @@ NODE_CMD=${YARN:-$NPM}
 
 echo $NODE_CMD
 
-$NODE_CMD install
+$COMPOSER install
+$NODE_CMD install --force
 $NODE_CMD build
 
 
 if [ ! -f "var/data.db" ]; then
-    $COMPOSER install
     php bin/console regenerate-app-secret .env.local
     php bin/console doctrine:database:create --no-interaction
     php bin/console doctrine:migrations:migrate --no-interaction
@@ -40,5 +40,5 @@ fi
 
 $COMPOSER dump-env prod
 $COMPOSER install --no-dev --optimize-autoloader
-APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
+php bin/console cache:clear --env=prod --no-debug
 php bin/console doctrine:migrations:migrate --no-interaction
