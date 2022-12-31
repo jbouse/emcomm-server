@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Operator Login{% endblock %}
+
+{% block body %}
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{ error.messageKey | trans(error.messageData, 'security') }}
+</div>
+{% endif %}
+
+{% if app.user %}
+<div class="alert alert-info" role="alert">
+    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}" class="alert-link">Logout</a>
+</div>
+{% endif %}
+
+<div class="card shadow">
+    <div class="card-header h5">
+        Operator Login
+    </div>
+    <div class="card-body">
+        {{ form(form) }}
+    </div>
+</div>
+{% endblock %}

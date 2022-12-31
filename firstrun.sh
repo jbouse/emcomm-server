@@ -35,7 +35,7 @@ if [ ! -f "var/data.db" ]; then
     php bin/console doctrine:database:create --no-interaction
     php bin/console doctrine:migrations:migrate --no-interaction
     php bin/console doctrine:fixtures:load --no-interaction
-    php bin/console app:user:create admin admin
+    php bin/console emcomm:user:create admin admin
 fi
 
 $COMPOSER dump-env prod

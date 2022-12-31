@@ -62,7 +62,7 @@ class B2fTextType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => B2fText::class,
+            'data_class'    => B2fText::class,
             'sanitize_html' => true,
         ]);
     }

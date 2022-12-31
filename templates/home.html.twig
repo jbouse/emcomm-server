@@ -3,21 +3,54 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<div class="content">
-<p class="lead">
-Welcome to the Emergency Communications Server.
-</p>
-{% if not(replies) %}
-<p>
-You may send an email or text using the buttons below
-but the system is not configured to accept replies.
-Only outgoing messages will be delivered.
-Thank you for your understanding with this limitation.
-</p>
-{% endif %}
-
+<div class="card shadow">
+    <div class="card-header h5 text-center">
+        Welcome to the Emergency Communications Server
+    </div>
+    <div class="card-body">
 {% if replies %}
-<a href="{{ path('about') }}" class="btn btn-primary">Search for Replies</a>
+        <div class="alert alert-info border border-2" role="alert">
+            The operator of this amateur radio station has made it possible
+            for you to send out emergency email and text messages through this
+            system. Incoming replies will be processed and able to be 
+            <a href="{{ path('about') }}" class="alert-link">Search for Replies</a>
+            by your intended recipient email address or phone number.            
+        </div>
+{% else %}
+        <div class="alert alert-warning border border-2" role="alert">
+            The operator of this amateur radio station has made it possible
+            for you to send out emergency email and text messages through this
+            system; however, due to the limited resources available they are 
+            currently only delivering outgoing messages and not able to receive 
+            replies back. Thank you for your understanding on this limitation.
+        </div>
 {% endif %}
+    </div>
+</div>
+
+<div class="clearfix p-3"></div>
+
+<div class="card shadow">
+    <div class="card-header h5 text-center bg-success">
+        System Bulletins
+    </div>
+    <div class="card-body">
+{% if bulletins %}
+    {% for bulletin in bulletins %}
+    {% if date(bulletin.datetime) < date() %}
+        <div class="p-2 bg-success bg-opacity-25 shadow border border-success border-start-0 border-1 rounded-end">
+            {{ bulletin.datetime|date('m/d/Y H:i') }}:<br/>{{ bulletin.content|e }}
+        </div>
+        {% if not(loop.last) %}
+        <div class="clearfix p-2"></div>
+        {% endif %}
+    {% endif %}
+    {% endfor %}
+{% else %}
+       <div class="p-2 text-center bg-default">
+            None at this time
+        </div>
+ {% endif %}
+    </div>
 </div>
 {% endblock %}

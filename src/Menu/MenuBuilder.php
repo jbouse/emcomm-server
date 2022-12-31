@@ -27,10 +27,10 @@ class MenuBuilder
             ->addChild('Send Text', ['route' => 'text_new'])
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link');
-        // $menu
-        //     ->addChild('About', ['route' => 'about'])
-        //     ->setAttribute('class', 'nav-item')
-        //     ->setLinkAttribute('class', 'nav-link');
+        $menu
+            ->addChild('Admin Dashboard', ['route' => 'admin'])
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link');
 
         return $menu;
     }

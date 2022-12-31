@@ -14,7 +14,7 @@ final class Version20221224172248 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Initial database creation and add App\Entity\MobileProvider';
     }
 
     public function up(Schema $schema): void

@@ -284,6 +284,9 @@
             "config/packages/uid.yaml"
         ]
     },
+    "symfony/ux-chartjs": {
+        "version": "v2.6.1"
+    },
     "symfony/validator": {
         "version": "6.2",
         "recipe": {
@@ -338,6 +341,18 @@
             "config/packages/webpack_encore.yaml",
             "package.json",
             "webpack.config.js"
+        ]
+    },
+    "symfony/workflow": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.3",
+            "ref": "3b2f8ca32a07fcb00f899649053943fa3d8bbfb6"
+        },
+        "files": [
+            "config/packages/workflow.yaml"
         ]
     },
     "twig/extra-bundle": {

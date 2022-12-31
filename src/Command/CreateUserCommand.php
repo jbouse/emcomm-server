@@ -62,7 +62,11 @@ class CreateUserCommand extends Command
         $user = new User();
         $user->setUsername($username);
         $user->setPassword($this->passwordHasher->hashPassword($user, $passwd));
-        $user->setRoles(['ROLE_ADMIN']);
+        if ($username == 'admin') {
+            $user->setRoles(['ROLE_ADMIN','ROLE_SUPER_ADMIN']);
+        } else {
+            $user->setRoles(['ROLE_ADMIN']);
+        }
 
         $this->userRepository->save($user, true);
 
