@@ -33,7 +33,7 @@ class DashboardController extends AbstractDashboardController
     {
         // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
-        yield MenuItem::linkToRoute('EmComm Home', 'fa fa-home', 'homepage');
+        yield MenuItem::linkToUrl('EmComm Home', 'fa fa-home', '/');
 
         yield MenuItem::subMenu('Entities', 'fa fa-list')->setSubItems([
             MenuItem::linkToCrud('Mobile Providers', 'fas fa-mobile-screen', MobileProvider::class),
