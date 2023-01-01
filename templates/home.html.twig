@@ -39,7 +39,7 @@
     {% for bulletin in bulletins %}
     {% if date(bulletin.datetime) < date() %}
         <div class="p-2 bg-success bg-opacity-25 shadow border border-success border-start-0 border-1 rounded-end">
-            {{ bulletin.datetime|date('m/d/Y H:i') }}:<br/>{{ bulletin.content|e }}
+            {{ bulletin.datetime|date('m/d/Y H:i') }}:<br/>{{ bulletin.content|nl2br }}
         </div>
         {% if not(loop.last) %}
         <div class="clearfix p-2"></div>
@@ -47,7 +47,7 @@
     {% endif %}
     {% endfor %}
 {% else %}
-       <div class="p-2 text-center bg-default">
+        <div class="p-2 text-center bg-default">
             None at this time
         </div>
  {% endif %}
